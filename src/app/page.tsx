@@ -2,7 +2,7 @@ import { ContainerScroll } from "@/components/globals/Container-scroll-animation
 import Navbar from "@/components/globals/Navbar";
 import { HeroParallax } from "@/components/globals/hero-parallax";
 import { InfiniteMovingCards } from "@/components/globals/infinite-moving-cards";
-import { LampComponent, LampContainer } from "@/components/globals/lamp";
+import { LampComponent } from "@/components/globals/lamp";
 import { Button } from "@/components/ui/button";
 import {clients, products} from "@/lib/constant"
 import { CardBody, CardContainer, CardItem } from '@/components/globals/3d-card'
