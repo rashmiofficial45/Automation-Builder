@@ -8,7 +8,7 @@
   export const clients = [...new Array(10)].map((client, index) => ({
     href: `/${index + 1}.png`,
   }))
-  export const menuOptions = [
+    export const menuOptions = [
     { name: 'Dashboard', Component: Home, href: '/dashboard' },
     { name: 'Workflows', Component: Workflows, href: '/workflows' },
     { name: 'Settings', Component: Settings, href: '/settings' },
@@ -17,7 +17,7 @@
     { name: 'Templates', Component: Templates, href: '/templates' },
     { name: 'Logs', Component: Logs, href: '/logs' },
   ]
-   export const products = [
+    export const products = [
     {
       title: 'Moonbeam',
       link: 'https://gomoonbeam.com',
