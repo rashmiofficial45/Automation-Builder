@@ -1,11 +1,21 @@
 import ProfileForm from "@/components/forms/profile-form";
 import React from "react";
 import ProfilePicture from "./_components/profile-picture";
-
+import prisma from "@/lib/db";
 type Props = {};
 
 const Settings = (props: Props) => {
   //WIP:wire up profile picture
+  const removeProfileImage = async() => {
+    await prisma.user.update({
+      where:{
+        clerkId:authUser.id
+      },
+      data:{
+        profileImage:null
+      }
+    })
+  }
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -20,9 +30,9 @@ const Settings = (props: Props) => {
             </p>
           </div>
           <ProfilePicture
-        //   onDelete={removeProfileImage}
-        //   userImage={user?.profileImage || ''}
-        //   onUpload={uploadProfileImage}
+          onDelete={removeProfileImage}
+          userImage={user?.profileImage || ''}
+          onUpload={uploadProfileImage}
         />
         <ProfileForm
         //   user={user}
