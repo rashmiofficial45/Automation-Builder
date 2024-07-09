@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Menu } from 'lucide-react';
+import { UserButton } from '@clerk/nextjs';
 type Props = {}
 
 const Navbar = (props: Props) => {
@@ -52,6 +53,7 @@ const Navbar = (props: Props) => {
           </span>
           </Link>
         {/* {user ? <UserButton afterSignOutUrl="/" /> : null} */}
+        <UserButton/>
         <Menu className="md:hidden" />
       </aside>
     </header>
