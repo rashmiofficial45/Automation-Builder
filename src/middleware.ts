@@ -1,4 +1,5 @@
-import { clerkMiddleware,createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+
 const isPublicRoute = createRouteMatcher([
     '/',
     '/api/clerk-webhook',
@@ -10,13 +11,14 @@ const isPublicRoute = createRouteMatcher([
     '/api/auth/callback/slack',
     '/api/flow',
     '/api/cron/wait'
-  ])
-export default clerkMiddleware((auth, request)=>{
-  if(!isPublicRoute(request)) {
+]);
+
+export default clerkMiddleware((auth, request) => {
+  if (!isPublicRoute(request) && request.method !== 'OPTIONS') {
     auth().protect();
   }
-})
+});
 
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
-}
+};
